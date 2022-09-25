@@ -1,0 +1,6 @@
+[book]
+authors = ["Esteban Borai"]
+language = "en"
+multilingual = false
+src = "src"
+title = "asm8086"
