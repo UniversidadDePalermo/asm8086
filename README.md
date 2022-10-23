@@ -1,23 +1,19 @@
-## Assembly 8086 File Layout
+# ASM8086
+Ejemplos y Guías de Estudio para Intel 8086
 
-```asm
-.model small
-.stack 100h
+## Contribuyendo
 
-.data
-  ;
-.code
+Hay dos formas de contribuir en este proyecto, se puede contribuir manteniendo
+el libro, ya sea corrigiendo errores ó añadiendo contenido. Como también se
+puede contribuir añadiendo o corrigiendo ejemplos en el directorio `examples`.
 
-start:
-  ; instructions
-end start
-```
+### Libro
 
-## Compiling, Linking and Executing
+Para contribuir en el libro es necesario [instalar mdBook][1], mdBook recompila
+y arma el libro para consumo del usuario final a partir de los archivos markdown
+que se encuentran en `src/`.
 
-```
-edit <filename>.asm
-tasm /l /zi <filename>.asm
-tlink /v <filename>.obj
-<filename>.exe
-```
+Luego de instalar mdBook, debes ejecutar `mdbook serve` en este directorio y
+abrir tu navegador en la dirección: `http://localhost:3000`.
+
+[1]: https://github.com/rust-lang/mdBook/releases
