@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_configurando_el_entorno/01_requisitos.html" class="active"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li class="chapter-item expanded "><a href="../02_assembly/01_hello_world.html"><strong aria-hidden="true">2.</strong> Assembly</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_setup/01_install.html" class="active"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li></ol></li><li class="chapter-item expanded "><a href="../02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,80 +142,16 @@ directorio <code>examples</code>, se elaboran en el emulador <a href="https://ww
 <li>Instalador DOSBox</li>
 <li>Borland Turbo Assembler 5.0 (TASM)</li>
 </ul>
-<h2 id="instalación"><a class="header" href="#instalación">Instalación</a></h2>
-<p>Los procedimientos de instalación pueden variar dependiendo del sistema
-operativo. Vista la pagina oficial de <a href="https://www.dosbox.com/download.php?main=1">DOSBox Downloads</a> para descargar
-instaladores oficiales.</p>
-<h3 id="macos"><a class="header" href="#macos">macOS</a></h3>
-<ol>
-<li><a href="https://www.dosbox.com/download.php?main=1">Descarga el instalador</a></li>
-<li>Abre el DMG descargado y copia el archivo DOSBox a tu directorio &quot;Aplicaciones&quot;.</li>
-</ol>
-<img src="images/01/001.png" />
-<ol start="3">
-<li>Crea un directorio <code>DOSDrive</code>, que servira como disco a montar en DOSBox.
-Este directorio nos permitirá agregar ejecutables obtenidos de internet para
-utilizar dentro de DOSBox.</li>
-</ol>
-<p>Si usas la terminal, puedes ejecutar el siguiente comando para crear el
-directorio:</p>
-<pre><code class="language-bash">mkdir ~/DOSDrive
-</code></pre>
-<p>Si usas &quot;Finder&quot;, abre la carpeta &quot;Inicio&quot; usando el menu contextual en la
-parte superior <code>&quot;Ir&quot; &gt; &quot;Inicio&quot;</code>. Y crea un directorio con el nombre <code>DOSDrive</code>.</p>
-<ol start="4">
-<li>
-<p>Copia el ejecutable <code>TASM</code> al directorio <code>DOSDrive</code> en tu directorio de <code>Inicio</code>,
-así como cualquier otro binario ejecutable de tu interés.</p>
-</li>
-<li>
-<p>Ejecuta DOSBox y monta el directorio <code>~/DOSDrive</code> creado en el paso 3 usando
-el siguiente programa.</p>
-</li>
-</ol>
-<pre><code class="language-bash">MOUNT C ~/DOSDrive
-</code></pre>
-<blockquote>
-<p>El comando <code>MOUNT</code> toma como primer parámetro el nombre del disco a montar,
-en este caso es C. Y como segundo parámetro la dirección del directorio a
-montar.</p>
-</blockquote>
-<img src="images/01/002.png" />
-<p>La ejecución de este comando habilitará un archivo de configuración dentro del
-directorio <code>~/Library/Preferences</code>.</p>
-<ol start="6">
-<li>Modifica el archivo de preferencias de DOSBox para que el comando MOUNT se
-ejecute automáticamente al abrir DOSBox.</li>
-</ol>
-<p>Abre el directorio <code>~/Library/Preferences</code> usando el terminal o Finder y
-abre el archivo: <code>DOSBox 0.74 Preferences</code> con tu editor de texto favorito,
-si no tienes uno puedes usar <code>TextEdit</code> en su lugar.</p>
-<blockquote>
-<p>El nombre del archivo puede variar según la versión de DOSBox instalada.</p>
-</blockquote>
-<p>Al final del archivo se encuentra la seccion <code>AUTOEXEC</code>, esta sección nos
-permite agregar comandos a ejecutar al abrir el emulador.</p>
-<pre><code class="language-toml">[autoexec]
-# Lines in this section will be run at startup.
-# You can put your MOUNT lines here.
-</code></pre>
-<p>Agrega el comando <code>MOUNT</code> utilizado en el paso 5 a esta sección para que se
-ejecute al abrir DOSBox.</p>
-<pre><code class="language-toml">[autoexec]
-# Lines in this section will be run at startup.
-# You can put your MOUNT lines here.
-MOUNT C ~/DOSDrive
-</code></pre>
-<h2 id="linux"><a class="header" href="#linux">Linux</a></h2>
-<p>TBD</p>
-<h2 id="windows"><a class="header" href="#windows">Windows</a></h2>
-<p>TBD</p>
+<h2 id="guías-por-sistema-operativo"><a class="header" href="#guías-por-sistema-operativo">Guías por Sistema Operativo</a></h2>
+<ul>
+<li><a href="1_configurando_el_entorno/02_macos.html">macOS</a></li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="../02_assembly/01_hello_world.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../01_setup/02_macos.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -224,7 +160,7 @@ MOUNT C ~/DOSDrive
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="../02_assembly/01_hello_world.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../01_setup/02_macos.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

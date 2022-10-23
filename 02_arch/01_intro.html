@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Assembly - asm8086</title>
+        <title>Arquitectura - asm8086</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_configurando_el_entorno/01_requisitos.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li class="chapter-item expanded "><a href="../02_assembly/01_hello_world.html" class="active"><strong aria-hidden="true">2.</strong> Assembly</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li></ol></li><li class="chapter-item expanded "><a href="../02_arch/01_intro.html" class="active"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,31 +134,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="compilando"><a class="header" href="#compilando">Compilando</a></h1>
-<pre><code class="language-asm">.model small
-.stack 100h
-
-.data
-  ;
-.code
-
-start:
-  ; instructions
-end start
-</code></pre>
-<h2 id="compiling-linking-and-executing"><a class="header" href="#compiling-linking-and-executing">Compiling, Linking and Executing</a></h2>
-<pre><code>edit &lt;filename&gt;.asm
-tasm /l /zi &lt;filename&gt;.asm
-tlink /v &lt;filename&gt;.obj
-&lt;filename&gt;.exe
-</code></pre>
-
+                        
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../01_configurando_el_entorno/01_requisitos.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../01_setup/02_macos.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../02_arch/02_registros.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -166,8 +151,11 @@ tlink /v &lt;filename&gt;.obj
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../01_configurando_el_entorno/01_requisitos.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../01_setup/02_macos.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../02_arch/02_registros.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
