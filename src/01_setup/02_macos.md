@@ -1,22 +1,6 @@
-# Configurando el Entorno
+# Instalación en macOS
 
-Los programas que se muestran en este libro asi como los ejemplos en el
-directorio `examples`, se elaboran en el emulador [DOSBox][1].
-
-## Requisitos
-
-- Instalador DOSBox
-- Borland Turbo Assembler 5.0 (TASM)
-
-## Instalación
-
-Los procedimientos de instalación pueden variar dependiendo del sistema
-operativo. Vista la pagina oficial de [DOSBox Downloads][2] para descargar
-instaladores oficiales.
-
-### macOS
-
-1. [Descarga el instalador][2]
+1. [Descarga el instalador][1] de la página oficial de DOSBox
 2. Abre el DMG descargado y copia el archivo DOSBox a tu directorio "Aplicaciones".
 
 <img src="images/01/001.png" />
@@ -82,13 +66,4 @@ ejecute al abrir DOSBox.
 MOUNT C ~/DOSDrive
 ```
 
-## Linux
-
-TBD
-
-## Windows
-
-TBD
-
-[1]: https://www.dosbox.com
-[2]: https://www.dosbox.com/download.php?main=1
+[1]: https://www.dosbox.com/download.php?main=1
