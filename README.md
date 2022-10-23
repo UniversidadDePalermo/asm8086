@@ -16,4 +16,7 @@ que se encuentran en `src/`.
 Luego de instalar mdBook, debes ejecutar `mdbook serve` en este directorio y
 abrir tu navegador en la dirección: `http://localhost:3000`.
 
+[Lee la Documentación][2] para desarrollar en mdBook.
+
 [1]: https://github.com/rust-lang/mdBook/releases
+[2]: https://rust-lang.github.io/mdBook/format/markdown.html

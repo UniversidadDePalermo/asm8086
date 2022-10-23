@@ -19,7 +19,7 @@ instaladores oficiales.
 1. [Descarga el instalador][2]
 2. Abre el DMG descargado y copia el archivo DOSBox a tu directorio "Aplicaciones".
 
-<img src="/assets/01/001.png" />
+<img src="images/01/001.png" />
 
 3. Crea un directorio `DOSDrive`, que servira como disco a montar en DOSBox.
 Este directorio nos permitirá agregar ejecutables obtenidos de internet para
@@ -49,7 +49,7 @@ MOUNT C ~/DOSDrive
 > en este caso es C. Y como segundo parámetro la dirección del directorio a
 > montar.
 
-<img src="/assets/01/002.png" />
+<img src="images/01/002.png" />
 
 La ejecución de este comando habilitará un archivo de configuración dentro del
 directorio `~/Library/Preferences`.
