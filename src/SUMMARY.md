@@ -6,3 +6,5 @@
   - [Windows](01_setup/04_windows.md)
 - [Arquitectura](02_arch/01_intro.md)
   - [Registros](02_arch/02_registros.md)
+- [Comandos](03_commands/01_global.md)
+- [Assembly](04_assembly/01_hello_world.md)
