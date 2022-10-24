@@ -6,6 +6,10 @@ Cada registro en la Intel 8086 tiene una capacidad
 de 16 bits. De los cuales 4 registros: AX,
 BX, CX y DX, estan internamente divididos a la mitad.
 
+<div style="padding: 1rem">
+  <img src="images/registro.svg" />
+</div>
+
 Nombre | Estructura | Descripción
 --- | --- | ---
 **AX** | **AH** - **AL** | Registro Acumulador

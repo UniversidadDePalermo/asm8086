@@ -63,7 +63,13 @@ ejecute al abrir DOSBox.
 [autoexec]
 # Lines in this section will be run at startup.
 # You can put your MOUNT lines here.
+
+# Montar el disco C apuntando a ~/DOSDrive
+@ECHO OFF
 MOUNT C ~/DOSDrive
+
+# Usar Disco C
+C:
 ```
 
 [1]: https://www.dosbox.com/download.php?main=1
