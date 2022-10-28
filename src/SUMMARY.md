@@ -7,4 +7,5 @@
 - [Arquitectura](02_arch/01_intro.md)
   - [Registros](02_arch/02_registros.md)
 - [Comandos](03_commands/01_global.md)
+  - [`DEBUG.EXE`](03_commands/02_debug.md)
 - [Assembly](04_assembly/01_hello_world.md)
