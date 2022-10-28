@@ -17,12 +17,17 @@ Nombre | Estructura | Descripción
 **CX** | **CH** - **CL** | Registro Contador
 **DX** | **DH** - **DL** | Registro de Datos
 
-## Registros no Divididos en 2 Partes
+## Registros para Índices
 
 Nombre | Descripción
 --- | ---
 **SI** | Source Index / Índice Fuente
 **DI** | Destination Index / Índice Destino
+
+## Registros para Punteros
+
+Nombre | Descripción
+--- | ---
 **BP** | Base Pointer / Puntero Base
 **SP** | Stack Pointer / Puntero Stack
 
