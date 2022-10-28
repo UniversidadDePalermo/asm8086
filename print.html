@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li class="chapter-item expanded "><a href="04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03_commands/02_debug.html"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -234,10 +234,14 @@ BX, CX y DX, estan internamente divididos a la mitad.</p>
 <tr><td><strong>DX</strong></td><td><strong>DH</strong> - <strong>DL</strong></td><td>Registro de Datos</td></tr>
 </tbody></table>
 </div>
-<h2 id="registros-no-divididos-en-2-partes"><a class="header" href="#registros-no-divididos-en-2-partes">Registros no Divididos en 2 Partes</a></h2>
+<h2 id="registros-para-Índices"><a class="header" href="#registros-para-Índices">Registros para Índices</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Nombre</th><th>Descripción</th></tr></thead><tbody>
 <tr><td><strong>SI</strong></td><td>Source Index / Índice Fuente</td></tr>
 <tr><td><strong>DI</strong></td><td>Destination Index / Índice Destino</td></tr>
+</tbody></table>
+</div>
+<h2 id="registros-para-punteros"><a class="header" href="#registros-para-punteros">Registros para Punteros</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Nombre</th><th>Descripción</th></tr></thead><tbody>
 <tr><td><strong>BP</strong></td><td>Base Pointer / Puntero Base</td></tr>
 <tr><td><strong>SP</strong></td><td>Stack Pointer / Puntero Stack</td></tr>
 </tbody></table>
@@ -306,6 +310,65 @@ bits.</p>
 <div style="padding: 1rem">
   <img src="03_commands/images/dir.png" />
 </div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="debugexe"><a class="header" href="#debugexe">DEBUG.EXE</a></h1>
+<blockquote>
+<p>Esta página sigue en construcción</p>
+</blockquote>
+<p>La interfaz de línea de comandos (CLI), <code>debug</code> se utiliza para inspeccionar la
+memoria y los registros del sistema.</p>
+<p>Para inicializarla se debe ejecutar la aplicación <code>debug</code>, la aplicación
+funciona mediante comandos, se puede utilizar el comando <em>help</em> escribiendo
+<kbd>?</kbd> seguido de <kbd>Enter</kbd>.</p>
+<div style="padding: 1rem">
+  <img src="03_commands/images/debug_help.png" />
+</div>
+<blockquote>
+<p>Para cada comando se debe de ingresar la opción seguida de <code>Enter</code>.</p>
+</blockquote>
+<blockquote>
+<p>Para cerrar la aplicación se ingresa la opción <code>q</code> seguida de <code>Enter</code></p>
+</blockquote>
+<h2 id="cambiar-dirección"><a class="header" href="#cambiar-dirección">Cambiar Dirección</a></h2>
+<pre><code>-a [address]
+</code></pre>
+<p>El comando <code>a</code> se utiliza para cambiar la dirección a la que se quiere apuntar
+el <code>debug</code>.</p>
+<p>Se debe escribir <code>a</code> seguido de la dirección en memoria al que se quiere
+inspeccionar.</p>
+<pre><code>-a 100
+</code></pre>
+<h3 id="escribiendo-assembler"><a class="header" href="#escribiendo-assembler">Escribiendo Assembler</a></h3>
+<p>Se pueden escribir instrucciones en assembler cuando se ejecuta el comando
+<code>address</code> (<code>a</code>).</p>
+<pre><code class="language-assembly">-a 100
+073F:0100 mov dx, 0000              ;; asigna 0 al registro DX
+073F:0103 mov ah, 09                ;; establece justo a la siguiente instrucción 
+073F:0105 int 21                    ;; que se escribira un mensaje en la pantalla
+073F:0107 mov ax, 4c00              ;; finaliza el programa con codigo 0
+073F:010A int 21                    ;; escribe un string a la salida standard (stdout)
+073F:010C                           ;; finaliza sin ingresar mas instrucciones y presionando enter
+-e 010C &quot;Hello World!&quot; 0d 0a &quot;$&quot;    ;; ingresa el string &quot;Hello World!&quot; en el espacio de memoria 010C
+-a 100
+073F:0100 mov dx, 10c0              ;; mueve el dato en `010C` a el registro `dx`
+073F:0103
+-d 100                              ;; dump, muestra los contenidos en memoria para la dirección 100
+</code></pre>
+<blockquote>
+<p><code>0d</code> y <code>0a</code> son equivalentes a carriage return y line feed en assembly</p>
+</blockquote>
+<blockquote>
+<p><code>&quot;$&quot;</code> determina que el string ha finalizado</p>
+</blockquote>
+<div style="padding: 1rem">
+  <img src="03_commands/images/debug_hello_world.png" />
+</div>
+<h2 id="calcular-suma-y-resta-de-2-números-hexadecimales"><a class="header" href="#calcular-suma-y-resta-de-2-números-hexadecimales">Calcular Suma y Resta de 2 números hexadecimales</a></h2>
+<p>El comando <code>h</code> recibe como argumentos 2 números hexadecimales y calcula
+la suma y la resta entre ambos numeros. Posteriormente los devuevele el
+el orden, suma a la izquierda y resta a la derecha.</p>
+<pre><code>-h 123 100
+0223 0023
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="assembly-en-dosbox"><a class="header" href="#assembly-en-dosbox">Assembly en DOSBox</a></h1>
 <h2 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h2>
 <pre><code class="language-asm">.model small
@@ -326,6 +389,11 @@ start:
   end
 end start
 </code></pre>
+<h2 id="recursos"><a class="header" href="#recursos">Recursos</a></h2>
+<ul>
+<li><a href="https://www.ctyme.com/rbrown.htm">Ralf Brown's Interrupt List
+Indexed HTML Version - Release 61</a></li>
+</ul>
 
                     </main>
 
