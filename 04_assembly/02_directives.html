@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Comandos - asm8086</title>
+        <title>Directivas - asm8086</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="../01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="../01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="../02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="../03_commands/01_global.html" class="active"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03_commands/02_debug.html"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="../04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04_assembly/02_directives.html"><strong aria-hidden="true">4.1.</strong> Directivas</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="../01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="../01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="../02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="../03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03_commands/02_debug.html"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="../04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04_assembly/02_directives.html" class="active"><strong aria-hidden="true">4.1.</strong> Directivas</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,22 +134,28 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="comandos-globales"><a class="header" href="#comandos-globales">Comandos Globales</a></h1>
-<h2 id="listar-entradas-en-el-directorio"><a class="header" href="#listar-entradas-en-el-directorio">Listar Entradas en el Directorio</a></h2>
-<h3 id="dir"><a class="header" href="#dir"><code>DIR</code></a></h3>
-<div style="padding: 1rem">
-  <img src="images/dir.png" />
-</div>
+                        <h1 id="directivas-directives"><a class="header" href="#directivas-directives">Directivas (Directives)</a></h1>
+<p>Las directivas permiten definir el comportamiento
+del programa con respecto a los segmentos de memoria
+usados, el tamaño del stack, valores estáticos y
+la sección de instrucciones a ejecutar.</p>
+<h2 id="model"><a class="header" href="#model"><code>.model</code></a></h2>
+<p>La directiva <code>.model</code> define el comportamiento de ciertos registros para tu
+programa.</p>
+<h3 id="model-tiny"><a class="header" href="#model-tiny"><code>.model tiny</code></a></h3>
+<p>Define que los registros <code>CS</code>, <code>DS</code> y <code>SS</code> apuntaran al mismo segmento de
+memoria de 64KB. El stack es colocado en la región mas alta de dicho segmento.</p>
+<h3 id="model-small"><a class="header" href="#model-small"><code>.model small</code></a></h3>
+<p>Define que el registro <code>CS</code> de tu programa apuntara a su propio segmento, seguido del segmento donde <code>DS</code> y <code>SS</code> estan apuntando. El stack se posicionará en la región mas alta del segmento <code>SS</code>.</p>
+<h2 id="stack"><a class="header" href="#stack"><code>.stack</code></a></h2>
+<p>TBD</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../02_arch/02_registros.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../04_assembly/01_hello_world.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a rel="next" href="../03_commands/02_debug.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -157,11 +163,8 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../02_arch/02_registros.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../04_assembly/01_hello_world.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a rel="next" href="../03_commands/02_debug.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 

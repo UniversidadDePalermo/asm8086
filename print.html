@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03_commands/02_debug.html"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03_commands/02_debug.html"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="04_assembly/02_directives.html"><strong aria-hidden="true">4.1.</strong> Directivas</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -311,11 +311,17 @@ bits.</p>
   <img src="03_commands/images/dir.png" />
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="debugexe"><a class="header" href="#debugexe">DEBUG.EXE</a></h1>
-<blockquote>
-<p>Esta página sigue en construcción</p>
-</blockquote>
 <p>La interfaz de línea de comandos (CLI), <code>debug</code> se utiliza para inspeccionar la
 memoria y los registros del sistema.</p>
+<h2 id="Índice-de-comandos"><a class="header" href="#Índice-de-comandos">Índice de Comandos</a></h2>
+<ul>
+<li><a href="03_commands/02_debug.html#cambiar-direcci%C3%B3n">Cambiar Dirección <code>-a</code></a>
+<ul>
+<li><a href="03_commands/02_debug.html#escribiendo-assembler">Escribiendo Assembler</a></li>
+</ul>
+</li>
+<li><a href="03_commands/02_debug.html#calcular-suma-y-resta-de-2-n%C3%BAmeros-hexadecimales">Calculo Suma/Resta de Números Hexa <code>-h</code></a></li>
+</ul>
 <p>Para inicializarla se debe ejecutar la aplicación <code>debug</code>, la aplicación
 funciona mediante comandos, se puede utilizar el comando <em>help</em> escribiendo
 <kbd>?</kbd> seguido de <kbd>Enter</kbd>.</p>
@@ -394,6 +400,21 @@ end start
 <li><a href="https://www.ctyme.com/rbrown.htm">Ralf Brown's Interrupt List
 Indexed HTML Version - Release 61</a></li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="directivas-directives"><a class="header" href="#directivas-directives">Directivas (Directives)</a></h1>
+<p>Las directivas permiten definir el comportamiento
+del programa con respecto a los segmentos de memoria
+usados, el tamaño del stack, valores estáticos y
+la sección de instrucciones a ejecutar.</p>
+<h2 id="model"><a class="header" href="#model"><code>.model</code></a></h2>
+<p>La directiva <code>.model</code> define el comportamiento de ciertos registros para tu
+programa.</p>
+<h3 id="model-tiny"><a class="header" href="#model-tiny"><code>.model tiny</code></a></h3>
+<p>Define que los registros <code>CS</code>, <code>DS</code> y <code>SS</code> apuntaran al mismo segmento de
+memoria de 64KB. El stack es colocado en la región mas alta de dicho segmento.</p>
+<h3 id="model-small"><a class="header" href="#model-small"><code>.model small</code></a></h3>
+<p>Define que el registro <code>CS</code> de tu programa apuntara a su propio segmento, seguido del segmento donde <code>DS</code> y <code>SS</code> estan apuntando. El stack se posicionará en la región mas alta del segmento <code>SS</code>.</p>
+<h2 id="stack"><a class="header" href="#stack"><code>.stack</code></a></h2>
+<p>TBD</p>
 
                     </main>
 
