@@ -9,3 +9,4 @@
 - [Comandos](03_commands/01_global.md)
   - [`DEBUG.EXE`](03_commands/02_debug.md)
 - [Assembly](04_assembly/01_hello_world.md)
+  - [Directivas](04_assembly/02_directives.md)

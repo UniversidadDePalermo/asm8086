@@ -1,9 +1,13 @@
 # DEBUG.EXE
 
-> Esta página sigue en construcción
-
 La interfaz de línea de comandos (CLI), `debug` se utiliza para inspeccionar la
 memoria y los registros del sistema.
+
+## Índice de Comandos
+
+- [Cambiar Dirección `-a`](#cambiar-dirección)
+  - [Escribiendo Assembler](#escribiendo-assembler)
+- [Calculo Suma/Resta de Números Hexa `-h`](#calcular-suma-y-resta-de-2-números-hexadecimales)
 
 Para inicializarla se debe ejecutar la aplicación `debug`, la aplicación
 funciona mediante comandos, se puede utilizar el comando _help_ escribiendo
