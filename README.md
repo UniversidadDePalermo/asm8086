@@ -1,5 +1,11 @@
 # ASM8086
+
 Ejemplos y Guías de Estudio para Intel 8086
+
+## Motivación
+
+Recompilar, organizar y mantener información sobre el desarrollo de programas
+y la arquitectura del chip Intel 8086.
 
 ## Contribuyendo
 
