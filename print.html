@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03_commands/02_debug.html"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="04_assembly/02_directives.html"><strong aria-hidden="true">4.1.</strong> Directivas</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03_commands/02_debug.html"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li><li class="chapter-item expanded "><a href="03_commands/03_edit.html"><strong aria-hidden="true">3.2.</strong> EDIT.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="04_assembly/02_directives.html"><strong aria-hidden="true">4.1.</strong> Directivas</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -375,6 +375,36 @@ el orden, suma a la izquierda y resta a la derecha.</p>
 <pre><code>-h 123 100
 0223 0023
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="editexe"><a class="header" href="#editexe">EDIT.EXE</a></h1>
+<div style="padding: 1rem">
+  <img src="03_commands/images/edit.png" />
+</div>
+<p>El programa <code>EDIT.EXE</code> es un editor de texto, util para el desarrollo de
+programas en Assembly dentro de DOSBox.</p>
+<p>Para editar un archivo o crear uno nuevo se debe ejecutar <code>EDIT.EXE</code>, pasando
+el nombre del archivo como parámetro.</p>
+<pre><code>edit &lt;filename&gt;.asm
+</code></pre>
+<div style="padding: 1rem">
+  <img src="03_commands/images/edit_filename.png" />
+</div>
+<p>Desarrolla el código en assembler:</p>
+<div style="padding: 1rem">
+  <img src="03_commands/images/edit_develop.png" />
+</div>
+<p>Guarda el archivo, usa el cursor para abrir el menú de archivo en la parte
+superior y luego presiona click en la opción <code>Save As</code>, finalmente presiona <code>Ok</code>.</p>
+<div style="padding: 1rem">
+  <img src="03_commands/images/edit_savefile.png" />
+</div>
+<p>Luego vuelve a abrir el menú <code>File</code> y selecciona <code>Exit</code>.
+Ahora debemos compilar el archivo Assembler, para ello usamos el ejecutable
+<code>tasm</code> de la siguiente forma:</p>
+<pre><code>tasm /l /zi &lt;filename&gt;.asm
+</code></pre>
+<div style="padding: 1rem">
+  <img src="03_commands/images/edit_tasm.png" />
+</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="assembly-en-dosbox"><a class="header" href="#assembly-en-dosbox">Assembly en DOSBox</a></h1>
 <h2 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h2>
 <pre><code class="language-asm">.model small
