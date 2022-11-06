@@ -4,7 +4,7 @@
   <img src="images/edit.png" />
 </div>
 
-El programa `EDIT.EXE` es un editor de texto, util para el desarrollo de
+El programa `EDIT.EXE` es un editor de texto, útil para el desarrollo de
 programas en Assembly dentro de DOSBox.
 
 Para editar un archivo o crear uno nuevo se debe ejecutar `EDIT.EXE`, pasando
@@ -43,4 +43,26 @@ tasm /l /zi <filename>.asm
   <img src="images/edit_tasm.png" />
 </div>
 
+Este comando compilara y creara 2 archivos a partir del código fuente en
+Assembly, `HELLO_WORLD.LST` Y `HELLO_WORLD.OBJ`.
 
+<div style="padding: 1rem">
+  <img src="images/edit_tasm2.png" />
+</div>
+
+Con el archivo `OBJ` presente, podemos hacer el linking y la compilación para
+obtener el archivo `EXE` que nos premite ejecutar el programa.
+
+```
+tlink /v <filename>.obj
+```
+
+<div style="padding: 1rem">
+  <img src="images/edit_tlink.png" />
+</div>
+
+Finalmente ejecutamos el programa.
+
+<div style="padding: 1rem">
+  <img src="images/edit_execute.png" />
+</div>
