@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03_commands/02_debug.html"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li><li class="chapter-item expanded "><a href="03_commands/03_edit.html"><strong aria-hidden="true">3.2.</strong> EDIT.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="04_assembly/02_directives.html"><strong aria-hidden="true">4.1.</strong> Directivas</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03_commands/02_debug.html"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li><li class="chapter-item expanded "><a href="03_commands/03_edit.html"><strong aria-hidden="true">3.2.</strong> EDIT.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="04_assembly/02_directives.html"><strong aria-hidden="true">4.1.</strong> Directivas</a></li><li class="chapter-item expanded "><a href="04_assembly/03_instructions.html"><strong aria-hidden="true">4.2.</strong> Instrucciónes</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -343,7 +343,7 @@ el <code>debug</code>.</p>
 inspeccionar.</p>
 <pre><code>-a 100
 </code></pre>
-<h3 id="escribiendo-assembler"><a class="header" href="#escribiendo-assembler">Escribiendo Assembler</a></h3>
+<h3 id="escribiendo-assembler-ensamblar"><a class="header" href="#escribiendo-assembler-ensamblar">Escribiendo Assembler (Ensamblar)</a></h3>
 <p>Se pueden escribir instrucciones en assembler cuando se ejecuta el comando
 <code>address</code> (<code>a</code>).</p>
 <pre><code class="language-assembly">-a 100
@@ -367,6 +367,12 @@ inspeccionar.</p>
 </blockquote>
 <div style="padding: 1rem">
   <img src="03_commands/images/debug_hello_world.png" />
+</div>
+<h2 id="desensamblar--u-offset-limit"><a class="header" href="#desensamblar--u-offset-limit">Desensamblar (<code>-u &lt;OFFSET&gt; &lt;LIMIT&gt;</code>)</a></h2>
+<p>El comando <code>u</code> nos permite desensamblar el código en binario, pasandolo a
+assembler.</p>
+<div style="padding: 1rem">
+  <img src="03_commands/images/debug_disassemble.png" />
 </div>
 <h2 id="calcular-suma-y-resta-de-2-números-hexadecimales"><a class="header" href="#calcular-suma-y-resta-de-2-números-hexadecimales">Calcular Suma y Resta de 2 números hexadecimales</a></h2>
 <p>El comando <code>h</code> recibe como argumentos 2 números hexadecimales y calcula
@@ -464,6 +470,26 @@ memoria de 64KB. El stack es colocado en la región mas alta de dicho segmento.<
 <p>Define que el registro <code>CS</code> de tu programa apuntara a su propio segmento, seguido del segmento donde <code>DS</code> y <code>SS</code> estan apuntando. El stack se posicionará en la región mas alta del segmento <code>SS</code>.</p>
 <h2 id="stack"><a class="header" href="#stack"><code>.stack</code></a></h2>
 <p>TBD</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="instrucciónes"><a class="header" href="#instrucciónes">Instrucciónes</a></h1>
+<p>Las instrucciones en Assembly son los <em>building blocks</em> para los programas que
+escribimos.</p>
+<h2 id="mov-reg-val"><a class="header" href="#mov-reg-val"><code>MOV &lt;REG&gt;, &lt;VAL&gt;</code></a></h2>
+<p>Asigna el valor <code>&lt;VAL&gt;</code> al registro <code>&lt;REG&gt;</code></p>
+<pre><code class="language-asm">MOV AH, 10
+MOV AL, -5
+MOV AX, 4C00
+</code></pre>
+<h2 id="add-reg-val"><a class="header" href="#add-reg-val"><code>ADD &lt;REG&gt;, &lt;VAL&gt;</code></a></h2>
+<p>Suma el valor en <code>&lt;VAL&gt;</code> a el contenido en <code>&lt;REG&gt;</code>. Si vamos a sumar por
+primera vez, es recomendable asegurarse el valor en <code>&lt;REG&gt;</code> colocando <code>0</code> antes.</p>
+<pre><code class="language-asm">MOV AH, 0
+ADD AH, 10
+</code></pre>
+<h2 id="sub-reg-val"><a class="header" href="#sub-reg-val"><code>SUB &lt;REG&gt;, &lt;VAL&gt;</code></a></h2>
+<p>Resta o substrae, el valor <code>&lt;VAL&gt;</code> a el contenido en el registro <code>&lt;REG&gt;</code>.</p>
+<pre><code class="language-asm">SUB AH, 10
+SUB AL, -5
+</code></pre>
 
                     </main>
 

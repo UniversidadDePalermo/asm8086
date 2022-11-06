@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="../01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="../01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="../02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="../03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03_commands/02_debug.html" class="active"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li><li class="chapter-item expanded "><a href="../03_commands/03_edit.html"><strong aria-hidden="true">3.2.</strong> EDIT.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="../04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04_assembly/02_directives.html"><strong aria-hidden="true">4.1.</strong> Directivas</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_setup/01_install.html"><strong aria-hidden="true">1.</strong> Configurando el Entorno</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_setup/02_macos.html"><strong aria-hidden="true">1.1.</strong> macOS</a></li><li class="chapter-item expanded "><a href="../01_setup/03_linux.html"><strong aria-hidden="true">1.2.</strong> Linux</a></li><li class="chapter-item expanded "><a href="../01_setup/04_windows.html"><strong aria-hidden="true">1.3.</strong> Windows</a></li></ol></li><li class="chapter-item expanded "><a href="../02_arch/01_intro.html"><strong aria-hidden="true">2.</strong> Arquitectura</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_arch/02_registros.html"><strong aria-hidden="true">2.1.</strong> Registros</a></li></ol></li><li class="chapter-item expanded "><a href="../03_commands/01_global.html"><strong aria-hidden="true">3.</strong> Comandos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03_commands/02_debug.html" class="active"><strong aria-hidden="true">3.1.</strong> DEBUG.EXE</a></li><li class="chapter-item expanded "><a href="../03_commands/03_edit.html"><strong aria-hidden="true">3.2.</strong> EDIT.EXE</a></li></ol></li><li class="chapter-item expanded "><a href="../04_assembly/01_hello_world.html"><strong aria-hidden="true">4.</strong> Assembly</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04_assembly/02_directives.html"><strong aria-hidden="true">4.1.</strong> Directivas</a></li><li class="chapter-item expanded "><a href="../04_assembly/03_instructions.html"><strong aria-hidden="true">4.2.</strong> Instrucciónes</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -167,7 +167,7 @@ el <code>debug</code>.</p>
 inspeccionar.</p>
 <pre><code>-a 100
 </code></pre>
-<h3 id="escribiendo-assembler"><a class="header" href="#escribiendo-assembler">Escribiendo Assembler</a></h3>
+<h3 id="escribiendo-assembler-ensamblar"><a class="header" href="#escribiendo-assembler-ensamblar">Escribiendo Assembler (Ensamblar)</a></h3>
 <p>Se pueden escribir instrucciones en assembler cuando se ejecuta el comando
 <code>address</code> (<code>a</code>).</p>
 <pre><code class="language-assembly">-a 100
@@ -191,6 +191,12 @@ inspeccionar.</p>
 </blockquote>
 <div style="padding: 1rem">
   <img src="images/debug_hello_world.png" />
+</div>
+<h2 id="desensamblar--u-offset-limit"><a class="header" href="#desensamblar--u-offset-limit">Desensamblar (<code>-u &lt;OFFSET&gt; &lt;LIMIT&gt;</code>)</a></h2>
+<p>El comando <code>u</code> nos permite desensamblar el código en binario, pasandolo a
+assembler.</p>
+<div style="padding: 1rem">
+  <img src="images/debug_disassemble.png" />
 </div>
 <h2 id="calcular-suma-y-resta-de-2-números-hexadecimales"><a class="header" href="#calcular-suma-y-resta-de-2-números-hexadecimales">Calcular Suma y Resta de 2 números hexadecimales</a></h2>
 <p>El comando <code>h</code> recibe como argumentos 2 números hexadecimales y calcula
