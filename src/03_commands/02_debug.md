@@ -37,7 +37,7 @@ inspeccionar.
 -a 100
 ```
 
-### Escribiendo Assembler
+### Escribiendo Assembler (Ensamblar)
 
 Se pueden escribir instrucciones en assembler cuando se ejecuta el comando
 `address` (`a`).
@@ -63,6 +63,15 @@ Se pueden escribir instrucciones en assembler cuando se ejecuta el comando
 
 <div style="padding: 1rem">
   <img src="images/debug_hello_world.png" />
+</div>
+
+## Desensamblar (`-u <OFFSET> <LIMIT>`)
+
+El comando `u` nos permite desensamblar el código en binario, pasandolo a
+assembler.
+
+<div style="padding: 1rem">
+  <img src="images/debug_disassemble.png" />
 </div>
 
 ## Calcular Suma y Resta de 2 números hexadecimales

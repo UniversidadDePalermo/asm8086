@@ -11,3 +11,4 @@
   - [`EDIT.EXE`](03_commands/03_edit.md)
 - [Assembly](04_assembly/01_hello_world.md)
   - [Directivas](04_assembly/02_directives.md)
+  - [Instrucciónes](04_assembly/03_instructions.md)
