@@ -138,7 +138,7 @@
 <div style="padding: 1rem">
   <img src="images/edit.png" />
 </div>
-<p>El programa <code>EDIT.EXE</code> es un editor de texto, util para el desarrollo de
+<p>El programa <code>EDIT.EXE</code> es un editor de texto, útil para el desarrollo de
 programas en Assembly dentro de DOSBox.</p>
 <p>Para editar un archivo o crear uno nuevo se debe ejecutar <code>EDIT.EXE</code>, pasando
 el nombre del archivo como parámetro.</p>
@@ -163,6 +163,22 @@ Ahora debemos compilar el archivo Assembler, para ello usamos el ejecutable
 </code></pre>
 <div style="padding: 1rem">
   <img src="images/edit_tasm.png" />
+</div>
+<p>Este comando compilara y creara 2 archivos a partir del código fuente en
+Assembly, <code>HELLO_WORLD.LST</code> Y <code>HELLO_WORLD.OBJ</code>.</p>
+<div style="padding: 1rem">
+  <img src="images/edit_tasm2.png" />
+</div>
+<p>Con el archivo <code>OBJ</code> presente, podemos hacer el linking y la compilación para
+obtener el archivo <code>EXE</code> que nos premite ejecutar el programa.</p>
+<pre><code>tlink /v &lt;filename&gt;.obj
+</code></pre>
+<div style="padding: 1rem">
+  <img src="images/edit_tlink.png" />
+</div>
+<p>Finalmente ejecutamos el programa.</p>
+<div style="padding: 1rem">
+  <img src="images/edit_execute.png" />
 </div>
 
                     </main>
