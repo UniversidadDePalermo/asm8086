@@ -84,3 +84,48 @@ el orden, suma a la izquierda y resta a la derecha.
 -h 123 100
 0223 0023
 ```
+
+## Registros (`-r` / `-r AX`)
+
+El comando `r`, muestra el estado de los [registros](02_arch/02_registros.md).
+Se puede utilizar de 2 formas.
+
+1. Mostrar todos los registros `-r`
+2. Mostrar 1 registo especifico `-r AX`
+
+<div style="padding: 1rem">
+  <img src="images/debug_registers.png" />
+</div>
+
+Podemos usar `r` para cambiar el valor de un registro. Colocamos `r` seguido del
+nombre del registro a cambiar el valor, sea `ax`, entonces `rax`.
+
+Presionamos <key>Enter</key> y a continuación colocamos el valor.
+
+```
+-rax
+AX 0000
+: 100
+```
+
+Al ejecutar `r` de vuelta, veremos el valor del registro `AX` cómo `100`
+
+```
+-r
+AX=0100 BX=0000 CX=0000 DX=0000 SP=0OFD BP=0000 SI=0000 DI=0000
+D5=073F ES=073F
+55=073F
+C$=073F
+IP=0100
+NU UP FI PL NZ MA PO NC
+073F: 0100 B410
+MOL
+AH. 10
+```
+
+<div style="padding: 1rem">
+  <img src="images/debug_registers_2.png" />
+</div>
+
+Este comando resulta de utilidad para cambiar el Program Counter ó registro `IP`,
+para colocarlo al inicio de nuestro programa.
