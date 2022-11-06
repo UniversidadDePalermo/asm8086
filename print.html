@@ -381,6 +381,40 @@ el orden, suma a la izquierda y resta a la derecha.</p>
 <pre><code>-h 123 100
 0223 0023
 </code></pre>
+<h2 id="registros--r---r-ax"><a class="header" href="#registros--r---r-ax">Registros (<code>-r</code> / <code>-r AX</code>)</a></h2>
+<p>El comando <code>r</code>, muestra el estado de los <a href="03_commands/02_arch/02_registros.html">registros</a>.
+Se puede utilizar de 2 formas.</p>
+<ol>
+<li>Mostrar todos los registros <code>-r</code></li>
+<li>Mostrar 1 registo especifico <code>-r AX</code></li>
+</ol>
+<div style="padding: 1rem">
+  <img src="03_commands/images/debug_registers.png" />
+</div>
+<p>Podemos usar <code>r</code> para cambiar el valor de un registro. Colocamos <code>r</code> seguido del
+nombre del registro a cambiar el valor, sea <code>ax</code>, entonces <code>rax</code>.</p>
+<p>Presionamos <key>Enter</key> y a continuación colocamos el valor.</p>
+<pre><code>-rax
+AX 0000
+: 100
+</code></pre>
+<p>Al ejecutar <code>r</code> de vuelta, veremos el valor del registro <code>AX</code> cómo <code>100</code></p>
+<pre><code>-r
+AX=0100 BX=0000 CX=0000 DX=0000 SP=0OFD BP=0000 SI=0000 DI=0000
+D5=073F ES=073F
+55=073F
+C$=073F
+IP=0100
+NU UP FI PL NZ MA PO NC
+073F: 0100 B410
+MOL
+AH. 10
+</code></pre>
+<div style="padding: 1rem">
+  <img src="03_commands/images/debug_registers_2.png" />
+</div>
+<p>Este comando resulta de utilidad para cambiar el Program Counter ó registro <code>IP</code>,
+para colocarlo al inicio de nuestro programa.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="editexe"><a class="header" href="#editexe">EDIT.EXE</a></h1>
 <div style="padding: 1rem">
   <img src="03_commands/images/edit.png" />
