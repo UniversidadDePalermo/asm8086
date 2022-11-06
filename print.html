@@ -381,6 +381,7 @@ el orden, suma a la izquierda y resta a la derecha.</p>
 </div>
 <p>El programa <code>EDIT.EXE</code> es un editor de texto, útil para el desarrollo de
 programas en Assembly dentro de DOSBox.</p>
+<h2 id="creando-un-programa-usando-el-editor-editexe"><a class="header" href="#creando-un-programa-usando-el-editor-editexe">Creando un programa usando el editor <code>EDIT.EXE</code></a></h2>
 <p>Para editar un archivo o crear uno nuevo se debe ejecutar <code>EDIT.EXE</code>, pasando
 el nombre del archivo como parámetro.</p>
 <pre><code>edit &lt;filename&gt;.asm
@@ -397,8 +398,9 @@ superior y luego presiona click en la opción <code>Save As</code>, finalmente p
 <div style="padding: 1rem">
   <img src="03_commands/images/edit_savefile.png" />
 </div>
-<p>Luego vuelve a abrir el menú <code>File</code> y selecciona <code>Exit</code>.
-Ahora debemos compilar el archivo Assembler, para ello usamos el ejecutable
+<p>Luego vuelve a abrir el menú <code>File</code> y selecciona <code>Exit</code>.</p>
+<h2 id="compilando-el-programa"><a class="header" href="#compilando-el-programa">Compilando el Programa</a></h2>
+<p>Ahora debemos compilar el archivo Assembler, para ello usamos el ejecutable
 <code>tasm</code> de la siguiente forma:</p>
 <pre><code>tasm /l /zi &lt;filename&gt;.asm
 </code></pre>
@@ -417,6 +419,7 @@ obtener el archivo <code>EXE</code> que nos premite ejecutar el programa.</p>
 <div style="padding: 1rem">
   <img src="03_commands/images/edit_tlink.png" />
 </div>
+<h2 id="ejecutando-el-programa-como-binario-exe"><a class="header" href="#ejecutando-el-programa-como-binario-exe">Ejecutando el programa como binario <code>.exe</code></a></h2>
 <p>Finalmente ejecutamos el programa.</p>
 <div style="padding: 1rem">
   <img src="03_commands/images/edit_execute.png" />
