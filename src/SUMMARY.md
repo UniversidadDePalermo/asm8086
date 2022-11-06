@@ -8,5 +8,6 @@
   - [Registros](02_arch/02_registros.md)
 - [Comandos](03_commands/01_global.md)
   - [`DEBUG.EXE`](03_commands/02_debug.md)
+  - [`EDIT.EXE`](03_commands/03_edit.md)
 - [Assembly](04_assembly/01_hello_world.md)
   - [Directivas](04_assembly/02_directives.md)
