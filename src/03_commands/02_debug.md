@@ -42,7 +42,7 @@ inspeccionar.
 Se pueden escribir instrucciones en assembler cuando se ejecuta el comando
 `address` (`a`).
 
-```assembly
+```
 -a 100
 073F:0100 mov dx, 0000              ;; asigna 0 al registro DX
 073F:0103 mov ah, 09                ;; establece justo a la siguiente instrucción 
@@ -65,6 +65,24 @@ Se pueden escribir instrucciones en assembler cuando se ejecuta el comando
   <img src="images/debug_hello_world.png" />
 </div>
 
+### El Segmento y el Desplazamiento
+
+Cada intrucción que escribimos al hacer `-a` se escribe en un segmento
+otorgado por el sistema operativo.
+
+```
+-a 100
+073F:0100 mov dx, 0000
+```
+
+El segmento (`segment`), en este caso es `073F`. El mismo se verá en el
+registro `CS`.
+
+El Desplazamiento u `offset`, muestra el byte en memoria dentro del
+segmento en el que se encuentra cada instrucción.
+
+La forma en como se muestra ordenado es: `SEGMENT:OFFSET`.
+
 ## Desensamblar (`-u <OFFSET> <LIMIT>`)
 
 El comando `u` nos permite desensamblar el código en binario, pasandolo a
@@ -73,6 +91,39 @@ assembler.
 <div style="padding: 1rem">
   <img src="images/debug_disassemble.png" />
 </div>
+
+### Modificar Instrucciónes en Memoria
+
+Usando los comandos `-u` y `-a`, podemos modificar las intrucciónes que
+escribimos anteriormente en memoria.
+
+Podemos usar el comando `-u` pasando el rango del `offset` en el que se
+encuentra nuestro programa.
+
+```
+-u 100 10c
+```
+
+Para ver las instrucciónes en este rango de memoria, luego usar el comando
+`-a` pasando el `offset` que deseamos modificar.
+
+```
+-a 102
+```
+
+Colocamos el nuevo valor:
+
+```
+ADD AH, 08
+```
+
+Y finalmente volvemos a usar `-u` para confirmar que la instrucción se ha
+actualizado satisfactoriamente.
+
+<div style="padding: 1rem">
+  <img src="images/debug_update_code.png" />
+</div>
+
 
 ## Calcular Suma y Resta de 2 números hexadecimales
 
@@ -129,3 +180,13 @@ AH. 10
 
 Este comando resulta de utilidad para cambiar el Program Counter ó registro `IP`,
 para colocarlo al inicio de nuestro programa.
+
+## Trace (`t`)
+
+Ejecuta la siguiente instrucción en el Program Counter (registro `IP`) y
+muestra el estado de los registros, similar a el comando `r`.
+
+<div style="padding: 1rem">
+  <img src="images/debug_trace.png" />
+</div>
+

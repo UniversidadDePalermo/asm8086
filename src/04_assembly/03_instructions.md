@@ -8,10 +8,45 @@ escribimos.
 Asigna el valor `<VAL>` al registro `<REG>`
 
 ```asm
-MOV AH, 10
-MOV AL, -5
-MOV AX, 4C00
+MOV AH, 10     ;; Coloca el valor 10 en el registro AH
+MOV AL, -5     ;; Coloca el valor -5 en el registro AL
+MOV AX, 4C00   ;; Coloca el valor 4C00 en el registro AX
+MOV AH, 'A'    ;; Coloca el valor ASCII 'A' en el registro AH
 ```
+
+> No se puede usar esta instrucción para modificar el valor de los registros
+> `CS` ó `IP`.
+
+### Tipos de Valor
+
+Podemos usar valores binarios, hexadecimales, decimales y ASCII al
+asignar valores usando `MOV`.
+
+#### Binario
+
+```
+MOV AH, 1100_0011b
+```
+
+#### Hexadecimal
+
+```
+MOV AX, CAFEh
+```
+
+#### Decimal
+
+```
+MOV AH, -5
+```
+
+#### ASCII (American Standard Code for Information Interchange)
+
+```
+MOV AH, 'A'
+```
+
+> [Tabla de Códigos ASCII][ASCII_TABLE]
 
 ## `ADD <REG>, <VAL>`
 
@@ -32,3 +67,4 @@ SUB AH, 10
 SUB AL, -5
 ```
 
+[ASCII_TABLE]: https://en.wikipedia.org/wiki/ASCII#Printable_characters

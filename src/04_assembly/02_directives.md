@@ -17,7 +17,9 @@ memoria de 64KB. El stack es colocado en la región mas alta de dicho segmento.
 
 ### `.model small`
 
-Define que el registro `CS` de tu programa apuntara a su propio segmento, seguido del segmento donde `DS` y `SS` estan apuntando. El stack se posicionará en la región mas alta del segmento `SS`.
+Define que el registro `CS` de tu programa apuntara a su propio segmento,
+seguido del segmento donde `DS` y `SS` estan apuntando. El stack se posicionará
+en la región mas alta del segmento `SS`.
 
 ## `.stack`
 
