@@ -170,7 +170,7 @@ inspeccionar.</p>
 <h3 id="escribiendo-assembler-ensamblar"><a class="header" href="#escribiendo-assembler-ensamblar">Escribiendo Assembler (Ensamblar)</a></h3>
 <p>Se pueden escribir instrucciones en assembler cuando se ejecuta el comando
 <code>address</code> (<code>a</code>).</p>
-<pre><code class="language-assembly">-a 100
+<pre><code>-a 100
 073F:0100 mov dx, 0000              ;; asigna 0 al registro DX
 073F:0103 mov ah, 09                ;; establece justo a la siguiente instrucción 
 073F:0105 int 21                    ;; que se escribira un mensaje en la pantalla
@@ -192,11 +192,41 @@ inspeccionar.</p>
 <div style="padding: 1rem">
   <img src="images/debug_hello_world.png" />
 </div>
+<h3 id="el-segmento-y-el-desplazamiento"><a class="header" href="#el-segmento-y-el-desplazamiento">El Segmento y el Desplazamiento</a></h3>
+<p>Cada intrucción que escribimos al hacer <code>-a</code> se escribe en un segmento
+otorgado por el sistema operativo.</p>
+<pre><code>-a 100
+073F:0100 mov dx, 0000
+</code></pre>
+<p>El segmento (<code>segment</code>), en este caso es <code>073F</code>. El mismo se verá en el
+registro <code>CS</code>.</p>
+<p>El Desplazamiento u <code>offset</code>, muestra el byte en memoria dentro del
+segmento en el que se encuentra cada instrucción.</p>
+<p>La forma en como se muestra ordenado es: <code>SEGMENT:OFFSET</code>.</p>
 <h2 id="desensamblar--u-offset-limit"><a class="header" href="#desensamblar--u-offset-limit">Desensamblar (<code>-u &lt;OFFSET&gt; &lt;LIMIT&gt;</code>)</a></h2>
 <p>El comando <code>u</code> nos permite desensamblar el código en binario, pasandolo a
 assembler.</p>
 <div style="padding: 1rem">
   <img src="images/debug_disassemble.png" />
+</div>
+<h3 id="modificar-instrucciónes-en-memoria"><a class="header" href="#modificar-instrucciónes-en-memoria">Modificar Instrucciónes en Memoria</a></h3>
+<p>Usando los comandos <code>-u</code> y <code>-a</code>, podemos modificar las intrucciónes que
+escribimos anteriormente en memoria.</p>
+<p>Podemos usar el comando <code>-u</code> pasando el rango del <code>offset</code> en el que se
+encuentra nuestro programa.</p>
+<pre><code>-u 100 10c
+</code></pre>
+<p>Para ver las instrucciónes en este rango de memoria, luego usar el comando
+<code>-a</code> pasando el <code>offset</code> que deseamos modificar.</p>
+<pre><code>-a 102
+</code></pre>
+<p>Colocamos el nuevo valor:</p>
+<pre><code>ADD AH, 08
+</code></pre>
+<p>Y finalmente volvemos a usar <code>-u</code> para confirmar que la instrucción se ha
+actualizado satisfactoriamente.</p>
+<div style="padding: 1rem">
+  <img src="images/debug_update_code.png" />
 </div>
 <h2 id="calcular-suma-y-resta-de-2-números-hexadecimales"><a class="header" href="#calcular-suma-y-resta-de-2-números-hexadecimales">Calcular Suma y Resta de 2 números hexadecimales</a></h2>
 <p>El comando <code>h</code> recibe como argumentos 2 números hexadecimales y calcula
@@ -239,6 +269,12 @@ AH. 10
 </div>
 <p>Este comando resulta de utilidad para cambiar el Program Counter ó registro <code>IP</code>,
 para colocarlo al inicio de nuestro programa.</p>
+<h2 id="trace-t"><a class="header" href="#trace-t">Trace (<code>t</code>)</a></h2>
+<p>Ejecuta la siguiente instrucción en el Program Counter (registro <code>IP</code>) y
+muestra el estado de los registros, similar a el comando <code>r</code>.</p>
+<div style="padding: 1rem">
+  <img src="images/debug_trace.png" />
+</div>
 
                     </main>
 

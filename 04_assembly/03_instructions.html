@@ -139,10 +139,33 @@
 escribimos.</p>
 <h2 id="mov-reg-val"><a class="header" href="#mov-reg-val"><code>MOV &lt;REG&gt;, &lt;VAL&gt;</code></a></h2>
 <p>Asigna el valor <code>&lt;VAL&gt;</code> al registro <code>&lt;REG&gt;</code></p>
-<pre><code class="language-asm">MOV AH, 10
-MOV AL, -5
-MOV AX, 4C00
+<pre><code class="language-asm">MOV AH, 10     ;; Coloca el valor 10 en el registro AH
+MOV AL, -5     ;; Coloca el valor -5 en el registro AL
+MOV AX, 4C00   ;; Coloca el valor 4C00 en el registro AX
+MOV AH, 'A'    ;; Coloca el valor ASCII 'A' en el registro AH
 </code></pre>
+<blockquote>
+<p>No se puede usar esta instrucción para modificar el valor de los registros
+<code>CS</code> ó <code>IP</code>.</p>
+</blockquote>
+<h3 id="tipos-de-valor"><a class="header" href="#tipos-de-valor">Tipos de Valor</a></h3>
+<p>Podemos usar valores binarios, hexadecimales, decimales y ASCII al
+asignar valores usando <code>MOV</code>.</p>
+<h4 id="binario"><a class="header" href="#binario">Binario</a></h4>
+<pre><code>MOV AH, 1100_0011b
+</code></pre>
+<h4 id="hexadecimal"><a class="header" href="#hexadecimal">Hexadecimal</a></h4>
+<pre><code>MOV AX, CAFEh
+</code></pre>
+<h4 id="decimal"><a class="header" href="#decimal">Decimal</a></h4>
+<pre><code>MOV AH, -5
+</code></pre>
+<h4 id="ascii-american-standard-code-for-information-interchange"><a class="header" href="#ascii-american-standard-code-for-information-interchange">ASCII (American Standard Code for Information Interchange)</a></h4>
+<pre><code>MOV AH, 'A'
+</code></pre>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters">Tabla de Códigos ASCII</a></p>
+</blockquote>
 <h2 id="add-reg-val"><a class="header" href="#add-reg-val"><code>ADD &lt;REG&gt;, &lt;VAL&gt;</code></a></h2>
 <p>Suma el valor en <code>&lt;VAL&gt;</code> a el contenido en <code>&lt;REG&gt;</code>. Si vamos a sumar por
 primera vez, es recomendable asegurarse el valor en <code>&lt;REG&gt;</code> colocando <code>0</code> antes.</p>
